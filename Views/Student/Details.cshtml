@@ -1,0 +1,61 @@
+@model StudentCourseRegistrationApp.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-primary text-white py-3 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4 class="mb-0 fw-semibold">Student Profile & Course Details</h4>
+                        <small class="text-white-50">Viewing record for Student ID #@Model.Id</small>
+                    </div>
+                    <span class="badge bg-light text-dark px-3 py-2 fs-6">ID: @Model.Id</span>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <span class="text-muted small text-uppercase fw-semibold d-block">Student Full Name</span>
+                                <span class="fs-5 fw-bold text-dark">@Model.Name</span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <span class="text-muted small text-uppercase fw-semibold d-block">Email Address</span>
+                                <span class="fs-5 fw-semibold text-primary">@Model.Email</span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <span class="text-muted small text-uppercase fw-semibold d-block">Enrolled Course</span>
+                                <span class="fs-5 fw-semibold text-dark">@Model.Course</span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <span class="text-muted small text-uppercase fw-semibold d-block">Current Semester</span>
+                                <span class="fs-5 fw-bold text-success">Semester @Model.Semester</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                            &larr; Back to Student List
+                        </a>
+                        <a asp-action="Create" class="btn btn-primary px-4">
+                            + Register Another Student
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+@model StudentCourseRegistrationApp.Models.Student
+
+@{
+    ViewData["Title"] = "Register New Student";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-header bg-primary text-white py-3">
+                    <h4 class="mb-0 fw-semibold">Student Course Registration Form</h4>
+                    <small class="text-white-50">Please fill in all the details below. All fields are required.</small>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post" novalidate>
+                        @Html.AntiForgeryToken()
+
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3" role="alert"></div>
+
+                        <!-- Student Name -->
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-semibold"></label>
+                            <span class="text-danger">*</span>
+                            <input asp-for="Name" class="form-control" placeholder="e.g. Tejas Andodariya" />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label fw-semibold"></label>
+                            <span class="text-danger">*</span>
+                            <input asp-for="Email" class="form-control" type="email" placeholder="e.g. tejas@marwadiuniversity.ac.in" />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Course Selection -->
+                        <div class="mb-3">
+                            <label asp-for="Course" class="form-label fw-semibold"></label>
+                            <span class="text-danger">*</span>
+                            <input asp-for="Course" class="form-control" placeholder="e.g. B.Tech Computer Engineering" />
+                            <span asp-validation-for="Course" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Semester -->
+                        <div class="mb-4">
+                            <label asp-for="Semester" class="form-label fw-semibold"></label>
+                            <span class="text-danger">*</span>
+                            <input asp-for="Semester" class="form-control" type="number" min="1" max="8" placeholder="Enter semester number (1 to 8)" />
+                            <span asp-validation-for="Semester" class="text-danger small"></span>
+                            <div class="form-text">Applicable semester range is between 1 and 8.</div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                                &larr; Back to Student List
+                            </a>
+                            <button type="submit" class="btn btn-primary px-4 fw-semibold">
+                                Submit Registration
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home - Student Course Registration System";
+}
+
+<div class="py-4">
+    <!-- Hero Banner -->
+    <div class="p-5 mb-4 bg-primary text-white rounded-3 shadow-sm">
+        <div class="container-fluid py-2">
+            <span class="badge bg-light text-primary mb-2 px-3 py-2 fw-semibold">Marwadi University · .NET Technologies (01CE1523)</span>
+            <h1 class="display-5 fw-bold">Student Course Registration System</h1>
+            <p class="col-md-9 fs-5 text-white-50">
+                Self-Learning Activity demonstrating modern ASP.NET Core MVC architecture, Model Binding,
+                Data Annotations Validation, and Razor View rendering.
+            </p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+                <a asp-controller="Student" asp-action="Index" class="btn btn-light btn-lg px-4 fw-semibold text-primary shadow-sm">
+                    View Registered Students
+                </a>
+                <a asp-controller="Student" asp-action="Create" class="btn btn-outline-light btn-lg px-4">
+                    Register New Student
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student & Project Info Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-bold text-primary mb-3">Student Details</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><strong>Name:</strong> Tejas Andodariya</li>
+                        <li class="mb-2"><strong>Enrollment:</strong> 92400103122</li>
+                        <li class="mb-2"><strong>Department:</strong> Computer Engineering</li>
+                        <li class="mb-0"><strong>Semester:</strong> 5th Semester</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-bold text-success mb-3">Key Features</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2">✔ MVC Architecture Pattern</li>
+                        <li class="mb-2">✔ Server-side & Client-side Validation</li>
+                        <li class="mb-2">✔ Data Annotations on Model</li>
+                        <li class="mb-0">✔ Thread-safe In-Memory Persistence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <h5 class="card-title fw-bold text-info mb-3">Assignment Scope</h5>
+                    <p class="card-text text-muted small mb-2">
+                        Built for the Self-Learning Activity on ASP.NET Core MVC under the guidance of Chetankumar Chudasama.
+                    </p>
+                    <span class="badge bg-info-subtle text-info border border-info-subtle">
+                        Deadline: 21 Nov 2026
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
